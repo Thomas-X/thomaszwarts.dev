@@ -45,16 +45,16 @@ const ColumnText = styled.span`
     }
 `;
 
+
+
 const ColumnTextSmall = styled.span`
     display: flex;
-    justify-content: center;
     align-content: center;
-    flex-direction: column;
     font-size: 1rem;
     font-family: "Hack";
     font-weight: bold;
     color: white;
-    opacity: 0.4;
+    opacity: ${({opacity}) => opacity ?? "0.4"};
     
     @media (min-width: 576px) {
         font-size: 1rem;
@@ -65,6 +65,10 @@ const ColumnTextSmall = styled.span`
     @media (min-width: 1200px) {
         font-size: 1.5rem;
     }
+`;
+
+const ColumnTextSmallMail = styled(ColumnTextSmall)`
+  font-weight: bold;
 `;
 
 const ColumnLinkText = styled.a`
@@ -211,6 +215,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-direction: column;
   width: 100%;
   padding: 1rem 0;
   margin: 2rem 0 0 0;
@@ -282,7 +287,7 @@ function App() {
                         Thomas Zwarts
                     </Title>
                     <Subtitle>
-                        junior developer | frontend | backend
+                        developer | frontend | backend
                     </Subtitle>
                 </TextContainer>
                 <canvas id="game-of-life-canvas">
@@ -363,7 +368,6 @@ function App() {
 
                             <TextFlexContainer direction={"column"}>
                                 <ColumnTextSmall style={{
-
                                     marginBottom: 15,
                                     marginTop: 30
                                 }}>
@@ -382,8 +386,11 @@ function App() {
                     </Col>
                 </Row>
                 <Footer>
-                    <ColumnTextSmall>
+                    <ColumnTextSmall style={{flexDirection: "column", textAlign: "center", justifyContent: "center"}}>
                         Made with ❤ by Thomas Zwarts.
+                    </ColumnTextSmall>
+                    <ColumnTextSmall opacity={1} style={{flexDirection: "column", textAlign: "center", justifyContent: "center"}}>
+                        contact me at: thomaszwarts@gmail.com
                     </ColumnTextSmall>
                 </Footer>
             </MyStuff>

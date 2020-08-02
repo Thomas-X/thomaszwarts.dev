@@ -147,12 +147,15 @@ gol
             };
             setDesiredCells(windowWidth);
             window.addEventListener('resize', () => {
-                windowHeight = window.innerHeight;
-                windowWidth = window.innerWidth - getScrollbarWidth(windowHeight);
-                const r = run(wasm, module, windowWidth, windowHeight, DESIRED_CELLS);
-                drawCells = r.drawCells;
-                universe = r.universe;
-                setDesiredCells(windowWidth);
+                // only update if the width changes, not the height (causes the universe to be reset on phones when scrolling etc).
+                if (window.innerWidth - getScrollbarWidth(windowHeight) !== windowWidth) {
+                    windowHeight = window.innerHeight;
+                    windowWidth = window.innerWidth - getScrollbarWidth(windowHeight);
+                    const r = run(wasm, module, windowWidth, windowHeight, DESIRED_CELLS);
+                    drawCells = r.drawCells;
+                    universe = r.universe;
+                    setDesiredCells(windowWidth);
+                }
             });
             const r = run(wasm, module, windowWidth, windowHeight, DESIRED_CELLS);
             drawCells = r.drawCells;

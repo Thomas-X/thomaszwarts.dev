@@ -9,10 +9,6 @@ ReactDOM.render(
             <App/>
         </Suspense>
         <Loader />
-        <h1>lorem ipsum</h1>
-        <h1>lorem ipsum</h1>
-        <h1>lorem ipsum</h1>
-        <h1>lorem ipsum</h1>
     </React.StrictMode>,
     document.getElementById('root')
 );

@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html, body {
+    overflow: hidden;
+}
 
 html,
 body,
@@ -12,5 +15,5 @@ body,
 }
 
 body {
-    background: #272730;
+    background: #251D34;
 }

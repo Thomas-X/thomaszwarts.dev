@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React, {useEffect, useState} from 'react'
 import {Canvas, useLoader} from 'react-three-fiber'
-import {Stars, TrackballControls, RoundedBox, useNormalTexture} from '@react-three/drei'
+import {Stars, TrackballControls, RoundedBox, useNormalTexture, OrbitControls} from '@react-three/drei'
 import './App.css'
 import * as THREE from "three"
 import RalewayBold from "./Raleway_Bold.json";
@@ -52,6 +52,16 @@ function App() {
                     metalness={0.1}
                 />
             </mesh>
+
+            <RoundedBox
+                args={[2, 2, 2]}
+                position={[0,2,-5]}
+                radius={0.05}
+                smoothness={4}
+            >
+                <meshStandardMaterial attach="material" color="orange"/>
+            </RoundedBox>
+
             <RoundedBox
                 args={[1, 1, 1]}
                 radius={0.05}
@@ -59,14 +69,7 @@ function App() {
             >
                 <meshStandardMaterial attach="material" color="orange"/>
             </RoundedBox>
-            <Stars
-                radius={75}
-                depth={50} // Depth of area where stars should fit (default=50)
-                count={6666} // Amount of stars (default=5000)
-                factor={3} // Size factor (default=4)
-                saturation={1} // Saturation 0-1 (default=0)
-                fade
-            />
+
         </Canvas>
     );
 }

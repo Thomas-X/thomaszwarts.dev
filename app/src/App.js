@@ -4,6 +4,7 @@ import {Col, Row} from "react-bootstrap";
 
 const HeroContainer = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 
 const ColumnTitles = styled.h1`
@@ -249,16 +250,18 @@ function App() {
     ];
 
     const projects = [
+        ["https://github.com/Thomas-X/sendai", "Sendai"],
         ["https://github.com/Thomas-X/channelbot-3", "Channelbot 3"],
         ["https://github.com/Thomas-X/csharp-cellular-automaton", "Cellular Automaton"],
         ["https://github.com/Thomas-X/Qui", "Qui"],
         ["https://github.com/Thomas-X/sandwhich-maker", "Sandwich maker (gRPC & Go)"],
-        ["https://github.com/Thomas-X/channelbot-2", "Channelbot 2 (abandoned)"],
+        ["https://github.com/Thomas-X/channelbot-2", "Channelbot 2 (deprecated)"],
     ];
 
     const workedForCompanies = [
+        ["https://www.elements.nl/", "Elements"],
+        ["https://www.albelli.nl/", "Albelli"],
         ["https://www.oberon.nl/", "Oberon"],
-        ["https://www.albelli.nl/", "Albelli"]
     ];
 
     const experience = (name, skill, leftText, rightText) => ({name, skill, leftText, rightText});
@@ -266,15 +269,15 @@ function App() {
         experience("", true, "junior", "medior"),
         experience("React", "75%", "", ""),
         experience("Typescript", "75%", "", ""),
-        experience("Terraform with AWS", "65%", "", ""),
-        experience("C# 7", "45%", "", ""),
-        experience("PHP Laravel", "45%", "", ""),
+        experience("Terraform with AWS", "60%", "", ""),
+        experience("C# 7", "55%", "", ""),
+        experience("PHP Laravel", "25%", "", ""),
 
         experience("", true, "novice", "junior"),
-        experience("Go", "45%", "", ""),
-        experience("Elm", "25%", "", ""),
-        experience("Rust with Wasm", "20%", "", ""),
-        experience("Kotlin", "20%", "", ""),
+        experience("Rust", "80%", "", ""),
+        experience("Go", "35%", "", ""),
+        experience("Elm", "15%", "", ""),
+        experience("Kotlin", "10%", "", ""),
     ];
 
     const lineWidth = 12;

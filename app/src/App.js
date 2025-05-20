@@ -319,38 +319,6 @@ function App() {
                     <Col xs={12} sm={12} md={6}>
                         <ColumnTitles>
                             <TextFlexContainer>
-                                <ColumnTitles style={{color: "#d81b60"}}>S</ColumnTitles>kills.
-                            </TextFlexContainer>
-                            <TextFlexContainer direction={"column"}>
-                                {
-                                    experiences.map((x, i) =>
-                                        <LineContainer key={i}>
-                                            <ColumnText>
-                                                {x.name}
-                                            </ColumnText>
-                                            <LineAndTextContainer>
-                                                {x.skill !== true && <LinesContainer>
-                                                    <LineBackground/>
-                                                    <LineForeground width={x.skill}/>
-                                                </LinesContainer>}
-                                                <LineTitleContainer>
-                                                    <ColumnTextSmall>
-                                                        {x.leftText}
-                                                    </ColumnTextSmall>
-                                                    <ColumnTextSmall>
-                                                        {x.rightText}
-                                                    </ColumnTextSmall>
-                                                </LineTitleContainer>
-                                            </LineAndTextContainer>
-                                        </LineContainer>
-                                    )
-                                }
-                            </TextFlexContainer>
-                        </ColumnTitles>
-                    </Col>
-                    <Col xs={12} sm={12} md={6}>
-                        <ColumnTitles>
-                            <TextFlexContainer>
                                 <ColumnTitles style={{color: "#0288d1"}}>P</ColumnTitles>rojects.
                             </TextFlexContainer>
                             <TextFlexContainer direction={"column"}>
